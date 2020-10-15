@@ -1,0 +1,83 @@
+<!doctype html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>FrondaStudio</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'favicon.png' %}" />
+</head>
+<body class="bg-darkgray" style="padding: 0;">
+
+
+<header>
+    <div class="navbar navbar-dark bg-black shadow-sm main-navigation">
+        <div class="container d-flex justify-content-start align-items-center">
+            <!-- Лого -->
+            <a href="/">
+                <img src="{% static 'imgs/logo.png' %}" class="custom-logo">
+            </a>
+
+            <div class="btn-group d-flex col-md-3 nav-dropdown">
+                <a href="/" class="btn btn-dark nav-btn col-10 current-menu-item">
+                    На главную
+                </a>
+                <div class="btn btn-dark nav-btn dropdown-toggle dropdown-toggle-split col-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                </div>
+                <div class="dropdown-menu bg-darkgray">
+                    <!-- Меню -->
+                    {% load menu_tags %}
+                    {% get_menu %}
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <!-- Поиск -->
+                <form role="search" method="get" id="searchform" action="/search/" >
+                    <div class="input-group">
+                        <input class="form-control search-input" type="search" value="" name="s" id="s" placeholder="Введите запрос..." required/>
+                        <div class="input-group-append">
+                            <input class="btn btn-dark search-btn" type="submit" id="searchsubmit" value="Найти" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+
+<main id="app" role="main">
+
+    {% block slider %}
+    {% endblock %}
+
+    <div class="album py-4 bg-gray">
+        {% block content %}
+        {% endblock %}
+    </div>
+</main>
+
+
+<footer class="text-muted bg-darkgray">
+    <div class="container">
+        <p class="float-right">
+            <a href="https://vk.com/frondastudio" target="_blank">Мы в ВК</a>
+        </p>
+        <p clas="text-light">Copyright &copy; 2020 Fronda Studio</p>
+    </div>
+</footer>
+
+
+<script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+
+</body>
+</html>

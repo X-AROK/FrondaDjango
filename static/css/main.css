@@ -1,0 +1,353 @@
+a {
+	color: #f8f9fa!important;
+}
+
+.bg-lightgray {
+	background-color: #1f1f1f;
+}
+
+.bg-gray {
+	background-color: #101010;
+}
+
+.bg-darkgray {
+	background-color: #0a0a0a;
+}
+
+.text-gray {
+	color: #a3a3a3;
+}
+
+.text-darkgray,
+.su-spoiler-content,
+.su-spoiler-title {
+	color: #a2a2a2;
+}
+
+@media (max-width: 1024px) {
+  body {
+    margin-top: 50px;
+  }
+}
+
+@font-face {
+    font-family: Dosis;
+    src: url('../fonts/dosis.ttf');
+}
+
+a:active, a:focus {
+  	outline: none!important;
+}
+
+.jumbotron {
+  	padding-top: 3rem;
+  	padding-bottom: 3rem;
+  	margin-bottom: 0;
+  	background-color: #fff;
+}
+
+.custom-logo {
+	height: 25px;
+	width: auto;
+}
+
+@media (max-width: 767px) {
+  	.post-title {
+    	display: none;
+  	}
+}
+
+@media (min-width: 768px) {
+  	.jumbotron {
+    	padding-top: 6rem;
+    	padding-bottom: 6rem;
+  	}
+  	.phone-post-title {
+    	display: none;
+  	}
+  	.post-title {
+    	display: block;
+    	margin-bottom: 2rem;
+  	}
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+	.play-btn {
+  		width: 100%;
+  	}
+}
+
+@media (min-width: 576px) {
+	.post-content {
+		margin-top: 1rem;
+	}
+	.phone-play-btn {
+		display: none;
+	}
+	.play-btn {
+		display: inline-block;
+	}
+}
+
+@media (max-width: 575px) {
+  	.post-info {
+    	margin-top: 1rem;
+		margin-bottom: 1rem;
+  	}
+  	.category-title {
+    	text-align: center;
+  	}
+  	.phone-post-title {
+    	display: inline-block;
+    	text-align: center;
+    	margin-bottom: 2rem;
+  	}
+	.play-btn {
+		display: none;
+	}
+}
+
+.jumbotron p:last-child {
+  	margin-bottom: 0;
+}
+
+.jumbotron h1 {
+  	font-weight: 300;
+}
+
+.jumbotron .container {
+  	max-width: 40rem;
+}
+
+footer {
+  	padding-top: 3rem;
+  	padding-bottom: 3rem;
+}
+
+footer p {
+  	margin-bottom: .25rem;
+}
+
+.menu-item {
+	list-style-type: none;
+}
+
+.menu-link a {
+	color: #fff!important;
+}
+
+.bg-black {
+	background-color: #000!important;
+}
+
+.category-title {
+  	margin-bottom: 2rem;
+}
+
+.post-info {
+  	position: relative;
+}
+
+.post-name {
+  	position: absolute;
+  	top: 0;
+}
+
+.post-meta {
+  	position: absolute;
+  	bottom: 0;
+}
+
+.post-meta p {
+  	vertical-align: bottom;
+  	padding: 0;
+}
+
+a.card {
+  	height: 95%;
+  	color: #000;
+}
+
+a.card:hover {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.card-image {
+  	position: relative;
+}
+
+.card-image::after {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url("../imgs/play.png") center no-repeat;
+}
+
+.card-image:not(.card-hovered)::after {
+  	display: none;
+}
+
+.card-hovered img{
+  	opacity: 85%;
+}
+
+.post-preview {
+  	width: 100%;
+  	height: auto;
+}
+
+.card-body {
+  	display: flex;
+  	align-items: center;
+  	justify-content: center;
+}
+
+.card-body span {
+  	text-align: center;
+  	text-overflow: ellipsis;
+}
+
+/*
+.pagination .nav-links {
+  	align-items: baseline;
+  	display: flex;
+  	flex-wrap: wrap;
+  	font-size: 1.8rem;
+  	font-weight: 600;
+  	margin: -1.5rem 0 0 -2.5rem;
+  	width: calc(100% + 2.5rem);
+  	justify-content: center;
+}
+
+.pagination-separator {
+  	margin: 5rem 0;
+}
+ */
+
+.nav-links > * {
+  	margin: 1.5rem 0 0 2.5rem;
+}
+
+.nav-links .placeholder {
+  	display: none;
+  	visibility: hidden;
+}
+
+/*
+.pagination a {
+  	text-decoration: none;
+}
+
+.pagination a:focus,
+.pagination a:hover {
+  	text-decoration: underline;
+}
+
+.pagination .dots {
+  	transform: translateY(-0.3em);
+  	color: #6d6d6d;
+}
+ */
+
+.nav-short {
+  	display: none;
+}
+
+.nav-dropdown {
+ 	margin-left: 1rem;
+  	padding: 0;
+}
+
+.current-menu-item {
+  	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+}
+
+.menu-item.active {
+	background: #1f1f1f;
+}
+
+.menu-item:hover:not(.active) {
+  	background: #101010;
+}
+
+.dropdown-menu {
+  	width: 100%;
+}
+
+.menu_sublist {
+  	padding: 0!important;
+  	margin: 0!important;
+}
+
+.search-input,
+.search-btn {
+	border-radius: 20px;
+}
+
+.search-input,
+.search-btn,
+.nav-btn {
+	border: 1px solid #0a0a0a;
+  	background: #0a0a0a;
+	color: #f8f9fa;
+}
+
+.search-btn:hover,
+.nav-btn:hover {
+	border: 1px solid #101010;
+	background: #101010;
+}
+
+.search-btn:active,
+.nav-btn:active,
+.search-btn:focus,
+.nav-btn:focus {
+	border: 1px solid #1f1f1f;
+	background: #1f1f1f;
+}
+
+.search-input:focus {
+	border: 1px solid #101010;
+  background: #101010;
+	outline: none;
+	color: #f8f9fa;
+}
+
+.play-btn {
+	margin-top: 2rem;
+	padding-right: 1.5rem;
+	padding-left: 1.5rem;
+}
+
+.phone-play-btn {
+	margin-top: 1rem;
+	width: 100%;
+}
+
+.pagination {
+	font-size: 20px;
+}
+
+.pagination a {
+	text-decoration: none;
+}
+
+.pagination .current {
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.pagination .prev {
+	margin-left: 0.5rem;
+}
+
+.pagination .next {
+	margin-right: 0.5rem;
+}

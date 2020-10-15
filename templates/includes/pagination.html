@@ -1,0 +1,21 @@
+{% if posts.has_other_pages %}
+    <div class="row justify-content-center">
+        <div class="pagination text-gray">
+            <span class="step-links">
+                {% if posts.has_previous %}
+                    <a href="?page=1">1</a>
+                    <a class="prev" href="?page={{ posts.previous_page_number }}">&laquo; назад</a>
+                {% endif %}
+
+                <span class="current">
+                    Страница {{ posts.number }} из {{ posts.paginator.num_pages }}
+                </span>
+
+                {% if posts.has_next %}
+                    <a class="next" href="?page={{ posts.next_page_number }}">далее &raquo;</a>
+                    <a href="?page={{ posts.paginator.num_pages }}">{{ posts.paginator.num_pages }}</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+{% endif %}

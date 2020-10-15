@@ -1,0 +1,15 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+    <div class="container">
+        <h3 class="category-title text-light">
+            {{ category_name }}
+        </h3>
+        <div class="row">
+            {% for post in posts %}
+                {% include 'includes/posts-list.html' %}
+            {% endfor %}
+        </div>
+        {% include 'includes/pagination.html' %}
+    </div>
+{% endblock %}

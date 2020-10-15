@@ -1,0 +1,38 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+    <div class="container py-3 bg-lightgray shadow-sm">
+        <h3 class="phone-post-title text-light">
+            {{ post.title }}
+        </h3>
+        <div class="row justify-content-start">
+            <div class="col-lg-3 col-md-4 col-sm-6 align-self-center">
+                <img class="post-preview" src="{{ post.img.url }}"/>
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-6 align-self-start post-info">
+                <h3 class="post-title text-light">
+                    {{ post.title }}
+                </h3>
+                <p style="margin-bottom: 0" class="text-gray">
+                    <?php $info = get_post_custom(); ?>
+                    <strong class="text-white">Страна:</strong> {{ post.country }}<br>
+                    <strong class="text-white">Год:</strong> {{ post.year }}<br>
+                    <strong class="text-white">Тип:</strong> {{ post.type }}<br>
+                    <strong class="text-white">Студия:</strong> {{ post.studio }}<br>
+                    <strong class="text-white">Жанры:</strong> {{ post.get_genres_str }}<br>
+                    <strong class="text-white">Роли озвучивали:</strong> {{ post.voiced }}<br>
+                    <strong class="text-white">Тайминг и работа над звуком:</strong> {{ post.timing }}
+                </p>
+              <a href='/player/{{ post.id }}' class="btn btn-danger play-btn">Смотреть</a>
+            </div>
+        </div>
+        <div class="row justify-content-start">
+      	    <div class="col-12">
+                <p class="post-content text-gray">
+                    {{ post.description }}
+                </p>
+                <a href='/player/{{ post.id }}' class="btn btn-danger phone-play-btn">Смотреть</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

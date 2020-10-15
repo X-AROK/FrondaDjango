@@ -1,0 +1,22 @@
+{% extends "layouts/main.html" %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <h3 class="category-title text-light">
+            &copy; X-AROK
+        </h3>
+        <div class="row">
+            <div class="col-md-3 col-sm-4 col-6">
+                <a href="https://vk.com/id455106225" class="card mb-3 shadow-sm bg-lightgray" target="_blank">
+                    <div class="card-image">
+
+                        <img class="post-preview" src="{% static 'imgs/ferret.jpg' %}">
+                    </div>
+                    <div class="card-body">
+                        <span class="align-middle text-gray">Хорек бессовестный</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

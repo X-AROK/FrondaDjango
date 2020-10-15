@@ -1,0 +1,53 @@
+<!doctype html>
+{% load static %}
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<meta name="description" content="">
+    	<title>FrondaStudio</title>
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    	<link href="{% static 'css/player/style.css' %}" rel="stylesheet">
+
+        <link rel="shortcut icon" href="{% static 'favicon.png' %}" />
+	</head>
+	<body>
+		<div class="loading">
+			<div class="loading-img">
+			</div>
+		</div>
+
+		<div class="kodik-player" >
+			<iframe id="player"  src="" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>
+		</div>
+		<div class="player-ui row">
+			<a class="close-btn col-1" href="/posts/{{ post_id }}">
+				<svg width="38px" height="38px" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				  <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"></path>
+				  <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"></path>
+				</svg>
+			</a>
+			<select class="custom-select col-3 col-sm-2" id="input-player">
+			</select>
+			<select class="custom-select col-3 col-sm-2" id="input-season">
+			</select>
+			<select class="custom-select col-3 col-sm-2" id="input-episode">
+			</select>
+		</div>
+
+        <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+		<script>
+		  !function(e,n,t,r,a){r=e.createElement(n),a=e.getElementsByTagName(n)
+		  [0],r.async=!0,r.src=t,a.parentNode.insertBefore(r,a)}
+		  (document,"script","//kodik-add.com/add-players.min.js");
+		</script>
+
+		<script type="text/javascript">
+			let ajaxUrl = '{{ ajax_url }}';
+		</script>
+		<script type="text/javascript" src="{% static 'js/player/player.js' %}"></script>
+	</body>
+</html>
