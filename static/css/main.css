@@ -351,3 +351,8 @@ a.card:hover {
 .pagination .next {
 	margin-right: 0.5rem;
 }
+
+.slider-img {
+	width: 100%;
+	height: auto;
+}

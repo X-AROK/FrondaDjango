@@ -1,0 +1,23 @@
+{% if slides.count > 0 %}
+
+<div class="swiper-container">
+    <style>
+        .swiper-pagination-bullet-active {
+            background: #0a0a0a;
+        }
+    </style>
+    <div class="swiper-wrapper">
+        {% for slide in slides %}
+            <div class="swiper-slide">
+                <a href="{{ slide.url }}">
+                    <img class="slider-img" src="{{ slide.img.url }}" alt="{{ slide.alt }}"/>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev swiper-button-black"></div>
+    <div class="swiper-button-next swiper-button-black"></div>
+</div>
+
+{% endif %}

@@ -39,7 +39,7 @@ class Video(models.Model):
     url = models.URLField("Ссылка")
 
     def __str__(self):
-        return f'{self.post.title} ({self.season} - {self.episode})'
+        return f'{self.post.title} [{self.player.name}] ({self.season} - {self.episode})'
 
     class Meta:
         ordering = ('post__title', 'player__name', 'season', 'episode')
