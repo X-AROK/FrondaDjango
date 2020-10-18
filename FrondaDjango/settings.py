@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=j_9%du%j6=5fj9y@(^&%$&^scahj6@cl7wnt%2!*2omzqc2p5'
+SECRET_KEY = 'LetsKeepItInASecret'  # to generate - https://djecrety.ir
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -134,3 +134,5 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
+
+from .local_settings import *
