@@ -24,11 +24,13 @@ a {
 	color: #a2a2a2;
 }
 
+/*
 @media (max-width: 1024px) {
   body {
     margin-top: 50px;
   }
 }
+ */
 
 @font-face {
     font-family: Dosis;

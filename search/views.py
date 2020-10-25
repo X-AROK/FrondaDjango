@@ -1,11 +1,15 @@
 from django.shortcuts import render
 from posts.models import Post
 from django.core.paginator import Paginator
+from FrondaDjango.settings import DEBUG
 
 
 def index(request):
     search = request.GET.get('s')
-    posts = Post.objects.filter(title__contains=search)
+    if DEBUG:
+        posts = Post.objects.filter(title__contains=search)
+    else:
+        posts = Post.objects.filter(title__search=search)
 
     paginator = Paginator(posts, 12)
     page_number = request.GET.get('page')

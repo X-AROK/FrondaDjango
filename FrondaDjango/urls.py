@@ -25,6 +25,7 @@ urlpatterns = [
     path('search/', include('search.urls')),
     path('player/', include('player.urls')),
     path('api/', include('api.urls')),
+    path('about/', include('aboutpage.urls')),
     path('admin/', admin.site.urls),
     path('xarok/', include('easteregg.urls'))
 ]

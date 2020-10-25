@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'menu',
     'search',
     'api',
+    'aboutpage',
     'easteregg'
 ]
 

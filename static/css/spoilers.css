@@ -1,0 +1,15 @@
+.spoiler_body {
+    padding: 0 1.25rem 0.25rem;
+}
+
+.spoiler_links {
+    background: #1a1a1a;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.spoiler_links:not(.spoiler_active) {
+    margin-bottom: .25rem;
+}
