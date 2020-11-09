@@ -18,14 +18,28 @@
     <div class="navbar navbar-dark bg-black shadow-sm main-navigation">
         <div class="container d-flex justify-content-start align-items-center">
             <!-- Лого -->
-            <a href="/">
-                <img src="{% static 'imgs/logo.png' %}" class="custom-logo">
-            </a>
 
-            <div class="btn-group d-flex col-md-3 nav-dropdown">
+                <a href="/">
+                    <img src="{% static 'imgs/logo.png' %}" class="custom-logo">
+                </a>
+
+
+            <div class="btn-group d-flex col-3 nav-dropdown">
+                {% if user.is_authenticated %}
+                    <div class="btn btn-dark nav-btn col-10 current-menu-item">
+                       Привет, {{ user.username  }}!
+                    </div>
+                {% else %}
+                    <a href="{% url 'signup' %}" class="btn btn-dark nav-btn col-10 current-menu-item">
+                        Регистрация/Вход
+                    </a>
+                {% endif %}
+
+                <!--
                 <a href="/" class="btn btn-dark nav-btn col-10 current-menu-item">
                     На главную
                 </a>
+                -->
                 <div class="btn btn-dark nav-btn dropdown-toggle dropdown-toggle-split col-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="sr-only">Toggle Dropdown</span>
                 </div>
@@ -34,10 +48,16 @@
                     {% load menu_tags %}
                     {% get_menu %}
                     <a class="menu-item dropdown-item text-white" href="/about">О нас</a>
+                    {% if user.is_superuser %}
+                        <a class="menu-item dropdown-item text-white" href="/admin">Админка</a>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                        <a class="menu-item dropdown-item text-white" href="{% url 'logout' %}">Выход</a>
+                    {% endif %}
                 </div>
             </div>
 
-            <div class="col-md-7">
+            <div class="col-7">
                 <!-- Поиск -->
                 <form role="search" method="get" id="searchform" action="/search/" >
                     <div class="input-group">
@@ -48,7 +68,6 @@
                     </div>
                 </form>
             </div>
-
         </div>
     </div>
 </header>

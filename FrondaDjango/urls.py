@@ -26,6 +26,8 @@ urlpatterns = [
     path('player/', include('player.urls')),
     path('api/', include('api.urls')),
     path('about/', include('aboutpage.urls')),
+    path('users/', include('django.contrib.auth.urls')),
+    path('users/', include('users.urls')),
     path('admin/', admin.site.urls),
     path('xarok/', include('easteregg.urls'))
 ]

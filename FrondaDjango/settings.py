@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'search',
     'api',
     'aboutpage',
+    'users',
     'easteregg'
 ]
 
@@ -135,5 +136,8 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
+
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
 
 from .local_settings import *
