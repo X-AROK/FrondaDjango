@@ -6,10 +6,7 @@ from FrondaDjango.settings import DEBUG
 
 def index(request):
     search = request.GET.get('s')
-    if DEBUG:
-        posts = Post.objects.filter(title__contains=search)
-    else:
-        posts = Post.objects.filter(title__search=search)
+    posts = Post.objects.filter(title__contains=search)
 
     paginator = Paginator(posts, 12)
     page_number = request.GET.get('page')
