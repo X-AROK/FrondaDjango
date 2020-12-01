@@ -173,37 +173,8 @@
         opacity: 1;
     }
 
-    .phone-menu .header.menu-opened ul.menu li.menu-item:nth-child(1) {
+    .phone-menu .header.menu-opened ul.menu li.menu-item:nth-child(n) {
         transition-delay: 0.27s;
-    }
-
-    .phone-menu .header.menu-opened ul.menu li.menu-item:nth-child(2) {
-        transition-delay: 0.34s;
-    }
-
-    .phone-menu .header.menu-opened ul.menu li.menu-item:nth-child(3) {
-        transition-delay: 0.41s;
-    }
-
-    .phone-menu .header.menu-opened ul.menu li.menu-item:nth-child(4) {
-        transition-delay: 0.48s;
-    }
-
-    .phone-menu .header.menu-opened ul.menu li.menu-item:nth-child(5) {
-        transition-delay: 0.55s;
-    }
-
-    .phone-menu .header.menu-opened ul.menu li.menu-item:nth-child(6) {
-        transition-delay: 0.62s;
-    }
-
-    .phone-menu .header.menu-opened ul.menu li.menu-item:nth-child(7) {
-        transition-delay: 0.69s;
-    }
-
-    .phone-menu .header.menu-opened .icon.icon-bag {
-        transform: translateX(75px);
-        transition-delay: 0.3s;
     }
 
     .phone-menu .content {
