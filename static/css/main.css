@@ -109,6 +109,18 @@ a:active, a:focus {
 	}
 }
 
+@media (max-width: 1023px) {
+	.main-navigation {
+		display: none;
+	}
+}
+
+@media (min-width: 1024px) {
+	.main-navigation {
+		display: block;
+	}
+}
+
 .jumbotron p:last-child {
   	margin-bottom: 0;
 }

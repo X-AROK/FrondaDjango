@@ -8,6 +8,7 @@
     <title>FrondaStudio</title>
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'css/phone-menu.css' %}" rel="stylesheet">
     <link rel="shortcut icon" href="{% static 'favicon.png' %}" />
     {% block styles %}{% endblock %}
 </head>
@@ -15,14 +16,54 @@
 
 
 <header>
+{% load menu_tags %}
+
+    <div class="phone-menu">
+        <div class="header">
+            <div class="burger-container">
+                <div id="burger">
+                    <div class="bar topBar"></div>
+                    <div class="bar btmBar"></div>
+                </div>
+            </div>
+            <div class="icon">
+                <img src="{% static 'imgs/logo.png' %}" class="custom-logo">
+            </div>
+            <ul class="menu">
+                {% if user.is_authenticated %}
+                    <li class="text-white align-self-center phone-menu-user-welcome">
+                       Привет, {{ user.username  }}!
+                    </li>
+                {% endif %}
+
+                {% get_phone_menu %}
+
+                {% if user.is_staff %}
+                    <li class="menu-item">
+                        <a href="/admin">Админка</a>
+                    </li>
+                {% endif %}
+
+                {% if user.is_authenticated %}
+                    <li class="menu-item">
+                        <a href="{% url 'logout' %}">Выход</a>
+                    </li>
+                {% else %}
+                    <li class="menu-item">
+                        <a href="{% url 'signup' %}">Регистрация/Вход</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+
+
     <div class="navbar navbar-dark bg-black shadow-sm main-navigation">
-        <div class="container d-flex justify-content-start align-items-center">
-            <!-- Лого -->
-
-                <a href="/">
-                    <img src="{% static 'imgs/logo.png' %}" class="custom-logo">
-                </a>
-
+        <div class="container d-flex justify-content-center align-items-center">
+            <a href="/">
+                <img src="{% static 'imgs/logo.png' %}" class="custom-logo">
+            </a>
 
             <div class="btn-group d-flex col-3 nav-dropdown">
                 {% if user.is_authenticated %}
@@ -45,10 +86,10 @@
                 </div>
                 <div class="dropdown-menu bg-darkgray">
                     <!-- Меню -->
-                    {% load menu_tags %}
+
                     {% get_menu %}
                     <a class="menu-item dropdown-item text-white" href="/about">О нас</a>
-                    {% if user.is_superuser %}
+                    {% if user.is_staff %}
                         <a class="menu-item dropdown-item text-white" href="/admin">Админка</a>
                     {% endif %}
                     {% if user.is_authenticated %}
@@ -88,7 +129,7 @@
 <footer class="text-muted bg-darkgray">
     <div class="container">
         <p class="float-right">
-            <a href="https://vk.com/frondastudio" target="_blank">Мы в ВК</a>
+            <a href="https://vk.com/frondastudio" target="_blank" rel="nofollow">Мы в ВК</a>
         </p>
         <p clas="text-light">Copyright &copy; 2020 Fronda Studio</p>
     </div>

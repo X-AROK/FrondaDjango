@@ -7,3 +7,9 @@ register = template.Library()
 def get_menu():
     items = MenuItem.objects.all()
     return {'items': items}
+
+
+@register.inclusion_tag("menu/generate_phone_menu.html")
+def get_phone_menu():
+    items = MenuItem.objects.all()
+    return {'items': items}

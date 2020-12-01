@@ -1,5 +1,1 @@
-$(".card").hover(function () {
-	$(this).find(".card-image").addClass("card-hovered");
-}, function() {
-	$(this).find(".card-image").removeClass("card-hovered");
-});
+$(".card").hover(function () {	$(this).find(".card-image").addClass("card-hovered");}, function() {	$(this).find(".card-image").removeClass("card-hovered");});(function(){    const burger = document.querySelector('.burger-container'),        header = document.querySelector('.header');    burger.onclick = function() {        header.classList.toggle('menu-opened');    }}());
