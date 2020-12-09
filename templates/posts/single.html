@@ -20,8 +20,8 @@
                     <strong class="text-white">Тип:</strong> {{ post.type }}<br>
                     <strong class="text-white">Студия:</strong> {{ post.studio }}<br>
                     <strong class="text-white">Жанры:</strong> {{ post.get_genres_str }}<br>
-                    <strong class="text-white">Роли озвучивали:</strong> {{ post.voiced }}<br>
-                    <strong class="text-white">Тайминг и работа над звуком:</strong> {{ post.timing }}
+                    <strong class="text-white">Роли озвучивали:</strong> {{ post.get_voiced_str }}<br>
+                    <strong class="text-white">Тайминг и работа над звуком:</strong> {{ post.get_timing_str }}
                 </p>
               <a href='/player/{{ post.id }}' class="btn btn-danger play-btn" rel="nofollow">Смотреть</a>
             </div>
