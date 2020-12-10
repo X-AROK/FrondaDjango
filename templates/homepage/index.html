@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+{% endblock %}
+
+{% block slider %}
+    {% include 'includes/slider.html' %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h3 class="category-title text-light">
+            Последние релизы
+        </h3>
+        <div class="row">
+            {% for post in last_releases %}
+                {% include 'includes/posts-list.html' %}
+            {% endfor %}
+        </div>
+        {% for category, posts in categories.items %}
+            {% if posts %}
+                <h3 class="category-title text-light">
+                    {{ category }}
+                </h3>
+                <div class="row">
+                    {% for post in posts %}
+                        {% include 'includes/posts-list.html' %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {% if is_homepage %}
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        {% load static %}
+        <script src="{% static 'js/homepage/slider.js' %}"></script>
+    {% endif %}
+{% endblock %}

@@ -8,11 +8,12 @@ from .models import Timer
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    exclude = ('upload_data',)
+    pass
 
 
 @admin.register(Video)
 class VideoAdmin(admin.ModelAdmin):
+    # exclude = ('upload_time', )
     pass
 
 

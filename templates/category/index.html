@@ -1,17 +1,5 @@
 {% extends "layouts/main.html" %}
 
-{% block styles %}
-    {% if is_homepage %}
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    {% endif %}
-{% endblock %}
-
-{% block slider %}
-    {% if is_homepage %}
-        {% include 'includes/slider.html' %}
-    {% endif %}
-{% endblock %}
-
 {% block content %}
     <div class="container">
         <h3 class="category-title text-light">
@@ -24,12 +12,4 @@
         </div>
         {% include 'includes/pagination.html' %}
     </div>
-{% endblock %}
-
-{% block scripts %}
-    {% if is_homepage %}
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        {% load static %}
-        <script src="{% static 'js/homepage/slider.js' %}"></script>
-    {% endif %}
 {% endblock %}

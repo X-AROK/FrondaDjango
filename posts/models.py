@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 from category.models import Category
 from category.models import Type
@@ -80,6 +82,7 @@ class Video(models.Model):
     season = models.IntegerField("Сезон")
     episode = models.IntegerField("Серия")
     url = models.URLField("Ссылка")
+    upload_time = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
         return f'{self.post.title} [{self.player.name}] ({self.season} - {self.episode})'

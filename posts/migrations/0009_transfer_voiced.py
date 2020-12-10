@@ -23,7 +23,6 @@ def unlink_voiced(apps, schema_editor):
         post.save()
 
 
-
 class Migration(migrations.Migration):
 
     dependencies = [
