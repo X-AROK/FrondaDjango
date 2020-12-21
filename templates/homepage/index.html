@@ -34,9 +34,7 @@
 {% endblock %}
 
 {% block scripts %}
-    {% if is_homepage %}
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        {% load static %}
-        <script src="{% static 'js/homepage/slider.js' %}"></script>
-    {% endif %}
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    {% load static %}
+    <script src="{% static 'js/homepage/slider.js' %}"></script>
 {% endblock %}
