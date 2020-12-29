@@ -50,7 +50,7 @@
                     </li>
                 {% else %}
                     <li class="menu-item">
-                        <a href="{% url 'signup' %}">Регистрация/Вход</a>
+                        <a href="{% url 'login' %}">Вход/Регистрация</a>
                     </li>
                 {% endif %}
             </ul>
@@ -71,8 +71,8 @@
                        Привет, {{ user.username  }}!
                     </div>
                 {% else %}
-                    <a href="{% url 'signup' %}" class="btn btn-dark nav-btn col-10 current-menu-item">
-                        Регистрация/Вход
+                    <a href="{% url 'login' %}" class="btn btn-dark nav-btn col-10 current-menu-item">
+                        Вход/Регистрация
                     </a>
                 {% endif %}
 
